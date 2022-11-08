@@ -5,6 +5,7 @@ import { CSSReset } from "../components/CSSReset";
 import { Menu } from "../components/Menu/index.jsx";
 import { TimeLine } from "../components/Timeline";
 import { Header } from "../components/Header";
+import { Favorites } from "../components/Favorites";
 
 const StyledHome = styled.div`
   display: flex;
@@ -20,6 +21,7 @@ function HomePage() {
         <Header name={config.name} job={config.job} avatar={config.avatar} />
         <Menu />
         <TimeLine playlists={config.playlists} />
+        <Favorites favorites={config.favorites} />
       </StyledHome>
     </>
   );
