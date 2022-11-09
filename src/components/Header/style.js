@@ -21,3 +21,9 @@ export const StyledHeader = styled.div`
     }
   }
 `;
+
+export const StyledBanner = styled.div`
+  background-color: blue;
+  height: 230px;
+  background-image: url(${({bgImg}) => bgImg})
+`;

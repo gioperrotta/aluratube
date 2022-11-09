@@ -1,10 +1,9 @@
-import { StyledHeader } from "./style"
-//import Banner from '../../../public/Banner.png'
+import { StyledBanner, StyledHeader } from "./style";
 
 export function Header(props) {
   return (
     <StyledHeader>
-      <img src="/Banner.png" alt="banner" />
+      <StyledBanner bgImg={props.bgImg} />
       <section className="user-info">
         <img src={`https://github.com/${props.avatar}`} alt="avatar" />
         <div>

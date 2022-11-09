@@ -6,6 +6,7 @@ import { Menu } from "../components/Menu/index.jsx";
 import { TimeLine } from "../components/Timeline";
 import { Header } from "../components/Header";
 import { Favorites } from "../components/Favorites";
+import { useState } from "react";
 
 const StyledHome = styled.div`
   display: flex;
@@ -14,14 +15,21 @@ const StyledHome = styled.div`
 `;
 
 function HomePage() {
-  return (
+  const [searchValue, setSerachValue] = useState('');
+
+  return(
     <>
       <CSSReset />
       <StyledHome>
-        <Header name={config.name} job={config.job} avatar={config.avatar} />
-        <Menu />
-        <TimeLine playlists={config.playlists} />
-        <Favorites favorites={config.favorites} />
+        <Header name={config.name} job={config.job} avatar={config.avatar} bgImg={config.bannerImg}/>
+        <Menu searchValue={searchValue} setSerachValue={setSerachValue}/>
+        <TimeLine
+          searchValue={searchValue}
+          playlists={config.playlists} 
+        />
+        <Favorites 
+          favorites={config.favorites} 
+        />
       </StyledHome>
     </>
   );

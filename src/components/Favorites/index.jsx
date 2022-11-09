@@ -6,7 +6,7 @@ export function Favorites(props) {
     <StyledFavorite>
       {favorites.map((favorite) => {
         return (
-          <a href={favorite.url}>
+          <a key={favorite.url} href={favorite.url}>
             <img src={favorite.avatar} alt="" />
             <h3>{favorite.name}</h3>
           </a>
