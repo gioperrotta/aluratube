@@ -1,6 +1,7 @@
 import { StyledMenu } from "./style";
 import { Logo } from "./Logo";
 import { Search } from "./Search";
+import { DarkModeSwitch } from "./DarkModeSwitch";
 
 export function Menu({searchValue, setSerachValue}) {
   return (
@@ -10,6 +11,7 @@ export function Menu({searchValue, setSerachValue}) {
        
       </div>
       <Search searchValue={searchValue} setSerachValue={setSerachValue}/>
+      <DarkModeSwitch/>
     </StyledMenu>
   );
 }
