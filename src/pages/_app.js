@@ -4,6 +4,7 @@ import {
   ColorModeContext,
   ColorModeProvider,
 } from "../components/Menu/DarkModeSwitch/ColorMode";
+import { RegisterVideo } from "../components/RegistrerVideo";
 import { CSSReset } from "../styles/CSSReset";
 
 const theme = {
@@ -31,13 +32,14 @@ function ProviderWrapper(props) {
   );
 }
 
-function MyApp({ Component, pageProps }) {
+function Root({ Component, pageProps }) {
   const context = useContext(ColorModeContext);
 
   return (
     <ThemeProvider theme={theme[context.mode]}>
       <CSSReset />
       <Component {...pageProps} />
+      <RegisterVideo />
     </ThemeProvider>
   );
 }
@@ -45,7 +47,7 @@ function MyApp({ Component, pageProps }) {
 export default function _App(props) {
   return (
     <ProviderWrapper>
-      <MyApp {...props} />
+      <Root {...props} />
     </ProviderWrapper>
   )
 }
